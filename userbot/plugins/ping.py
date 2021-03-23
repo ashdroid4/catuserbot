@@ -13,8 +13,7 @@ async def _(event):
     await event.edit("Pong!\n`{}`".format(ms))
 
 
-@bot.on(admin_cmd(pattern=f"^Aping$", outgoing=True))
-@bot.on(sudo_cmd(pattern=f"fping$", allow_sudo=True))
+@bot.on(admin_cmd(pattern=f"^aping$", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
