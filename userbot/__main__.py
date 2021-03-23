@@ -20,15 +20,15 @@ if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.tgbot = None
-    if Config.TG_BOT_USER_NAME_BF_HER is not None:
+    if Config.TG_BOT_USERNAME is not None:
         LOGS.info("Initiating Inline Bot")
         # ForTheGreatrerGood of beautification
         bot.tgbot = TelegramClient(
             "TG_BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
-        ).start(bot_token=Config.TG_BOT_TOKEN_BF_HER)
+        ).start(bot_token=Config.TG_BOT_TOKEN)
         LOGS.info("Initialisation finished with no errors")
         LOGS.info("Starting Userbot")
-        bot.loop.run_until_complete(add_bot(Config.TG_BOT_USER_NAME_BF_HER))
+        bot.loop.run_until_complete(add_bot(Config.TG_BOT_USERNAME))
         LOGS.info("Startup Completed")
     else:
         bot.start()
@@ -58,8 +58,8 @@ async def startupmessage():
         \nIf you need assistance, **head to https://t.me/catuserbot_support",
                 link_preview=False,
             )
-    except Exception:
-        pass
+    except Exception as e:
+        LOGS.info(str(e))
 
 
 bot.loop.create_task(startupmessage())

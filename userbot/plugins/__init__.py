@@ -21,7 +21,7 @@ ALIVE_NAME = Config.ALIVE_NAME
 AUTONAME = Config.AUTONAME
 DEFAULT_BIO = Config.DEFAULT_BIO
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
-BOT_USERNAME = Config.TG_BOT_USER_NAME_BF_HER
+BOT_USERNAME = Config.TG_BOT_USERNAME
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
@@ -78,8 +78,8 @@ if Config.THUMB_IMAGE is not None:
         try:
             with open(thumb_image_path, "wb") as f:
                 f.write(requests.get(Config.THUMB_IMAGE).content)
-        except:
-            pass
+        except Exception as e:
+            LOGS.info(str(e))
 
 
 def check(cat):
@@ -87,7 +87,7 @@ def check(cat):
         return True
     try:
         hi = re.search(cat.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
-    except:
+    except Exception:
         hi = False
     return bool(hi)
 
