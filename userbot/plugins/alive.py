@@ -9,9 +9,15 @@ from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, rep
 DEFAULTUSER = ALIVE_NAME or "cat"
 CAT_IMG = Config.ALIVE_PIC
 TAT_IMG = Config.ALIVE_PIC_2
+LAT_IMG = Config.ALIVE_PIC_3
+LAN_IMG = Config.ALIVE_PIC_4
+FAN_IMG = Config.ALIVE_PIC_5
 FAT_IMG = [
             CAT_IMG,
             TAT_IMG,
+            LAT_IMG,
+            LAN_IMG,
+            FAN_IMG,
     ]
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✥ "
