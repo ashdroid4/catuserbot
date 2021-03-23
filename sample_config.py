@@ -110,6 +110,7 @@ class Config(object):
 
     # in alive message pic
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
+    ALIVE_PIC_2 = os.environ.get("ALIVE_PIC_2", None)
 
     # in pm permit pic
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
