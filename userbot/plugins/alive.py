@@ -7,12 +7,12 @@ from telethon import version
 from . import ALIVE_NAME, StartTime, catversion, get_readable_time, mention, reply_id
 
 DEFAULTUSER = ALIVE_NAME or "cat"
-CAT_IMG = Config.ALIVE_PIC
-TAT_IMG = Config.ALIVE_PIC_2
-LAT_IMG = Config.ALIVE_PIC_3
-LAN_IMG = Config.ALIVE_PIC_4
-FAN_IMG = Config.ALIVE_PIC_5
-FAT_IMG = [
+CAT_IMG_1 = Config.ALIVE_PIC_1
+CAT_IMG_2 = Config.ALIVE_PIC_2
+CAT_IMG_3 = Config.ALIVE_PIC_3
+CAT_IMG_4 = Config.ALIVE_PIC_4
+CAT_IMG_5 = Config.ALIVE_PIC_5
+CAT_IMG = [
             CAT_IMG,
             TAT_IMG,
             LAT_IMG,
@@ -39,7 +39,7 @@ async def amireallyalive(alive):
         cat_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
         cat_caption += f"**{EMOJI} Master:** {mention}\n"
         await alive.client.send_file(
-            alive.chat_id, random.choice(FAT_IMG), caption=cat_caption, reply_to=reply_to_id
+            alive.chat_id, random.choice(CAT_IMG), caption=cat_caption, reply_to=reply_to_id
         )
         await alive.delete()
     else:
