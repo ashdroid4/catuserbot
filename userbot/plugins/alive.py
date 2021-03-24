@@ -13,11 +13,11 @@ CAT_IMG_3 = Config.ALIVE_PIC_3
 CAT_IMG_4 = Config.ALIVE_PIC_4
 CAT_IMG_5 = Config.ALIVE_PIC_5
 CAT_IMG = [
-            CAT_IMG,
-            TAT_IMG,
-            LAT_IMG,
-            LAN_IMG,
-            FAN_IMG,
+            CAT_IMG_1,
+            CAT_IMG_2,
+            CAT_IMG_3,
+            CAT_IMG_4,
+            CAT_IMG_5,
     ]
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESSFULLY ✮"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✥ "
