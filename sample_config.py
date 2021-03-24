@@ -109,7 +109,7 @@ class Config(object):
     NO_LOAD = [x for x in os.environ.get("NO_LOAD", "").split()]
 
     # in alive message pic
-    ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
+    ALIVE_PIC_1 = os.environ.get("ALIVE_PIC_1", None)
     ALIVE_PIC_2 = os.environ.get("ALIVE_PIC_2", None)
     ALIVE_PIC_3 = os.environ.get("ALIVE_PIC_3", None)
     ALIVE_PIC_4 = os.environ.get("ALIVE_PIC_4", None)
