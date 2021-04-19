@@ -1,5 +1,5 @@
 import nekos
 
 @bot.on(admin_cmd(pattern="neko ?(.*)"))
-async def (nekos):
+async def cat(nekos):
   print(nekos.cat())
