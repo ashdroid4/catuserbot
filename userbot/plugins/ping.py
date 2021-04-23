@@ -10,7 +10,7 @@ async def _(event):
     event = await edit_or_reply(event, "Pong!")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit("Pong!\n`{}`".format(ms))
+    await event.edit("Pong!\n`{}`ms".format(ms))
 
 
 @bot.on(admin_cmd(pattern=f"^aping$", outgoing=True))
@@ -64,10 +64,10 @@ async def _(event):
 CMD_HELP.update(
     {
         "ping": "**Plugin :** `ping`\
-    \n\n  •  **Syntax :** `ping`\
-    \n  •  **Function : **__Shows you the ping speed of server__\
-    \n\n  •  **Syntax : **`aping`\
-    \n  •  **Function : **__Shows the server ping with extra animation__\
+    \n\n•  **Syntax :** `ping`\
+    \n•  **Function : **__Shows you the ping speed of server__\
+    \n\n•  **Syntax : **`aping`\
+    \n•  **Function : **__Shows the server ping with extra animation__\
     "
     }
 )
