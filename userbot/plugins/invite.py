@@ -1,3 +1,6 @@
+# Originally made by @rekcah for @javes05
+#Scraped from https://github.com/TheVaders/Vader/blob/master/userbot/plugins/invite.py
+
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
@@ -48,8 +51,6 @@ async def _(event):
         await edit_or_reply(event, f"`{to_add_users} is/are Invited Successfully`")
 
 
-
-
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
     chat_info = None
@@ -93,6 +94,7 @@ def user_full_name(user):
     full_name = " ".join(names)
     return full_name
 
+
 @bot.on(admin_cmd(pattern="invite ?(.*)"))
 @bot.on(sudo_cmd(pattern="invite ?(.*)", allow_sudo=True))
 async def get_users(event):
@@ -130,6 +132,7 @@ async def get_users(event):
     return await hell.edit(
         f"**Terminal Finished** \n\n• Successfully Invited `{s}` people \n• failed to invite `{f}` people"
     )
+
 
 
 CMD_HELP.update(
