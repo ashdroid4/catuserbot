@@ -1,6 +1,3 @@
-# Originally made by @rekcah for @javes05
-#Scraped from https://github.com/TheVaders/Vader/blob/master/userbot/plugins/invite.py
-
 from telethon.errors import (
     ChannelInvalidError,
     ChannelPrivateError,
@@ -49,8 +46,8 @@ async def _(event):
                     await edit_delete(event, f"`{str(e)}`", 5)
 
         await edit_or_reply(event, f"`{to_add_users} is/are Invited Successfully`")
-
-
+        
+#This was originally made by @rekcah for @javes05
 async def get_chatinfo(event):
     chat = event.pattern_match.group(1)
     chat_info = None
@@ -76,7 +73,7 @@ async def get_chatinfo(event):
             return None
         except ChannelPrivateError:
             await event.reply(
-                "`This is a private channel/group or I am banned from there`"
+                "`This is a private channel/group or I'm banned from there`"
             )
             return None
         except ChannelPublicGroupNaError:
@@ -88,49 +85,42 @@ async def get_chatinfo(event):
     return chat_info
 
 
-def user_full_name(user):
-    names = [user.first_name, user.last_name]
-    names = [i for i in list(names) if i]
-    full_name = " ".join(names)
-    return full_name
-
-
 @bot.on(admin_cmd(pattern="invite ?(.*)"))
 @bot.on(sudo_cmd(pattern="invite ?(.*)", allow_sudo=True))
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
     if not sender.id == me.id:
-        hell = await edit_or_reply(event, "`processing...`")
+        cat = await edit_or_reply(event, "`Processing...`")
     else:
-        hell = await edit_or_reply(event, "`processing...`")
-    kraken = await get_chatinfo(event)
+        cat = await edit_or_reply(event, "`Processing...`")
+    primem = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
-        return await hell.edit("`Sorry, Cant add users here`")
+        return await cat.edit("`Sorry, can't add users here😞`")
     s = 0
     f = 0
     error = "None"
 
-    await hell.edit("**TerminalStatus**\n\n`Collecting Users.......`")
-    async for user in event.client.iter_participants(kraken.full_chat.id):
+    await cat.edit("**TerminalStatus**\n\n`Collecting members...`")
+    async for user in event.client.iter_participants(primem.full_chat.id):
         try:
             if error.startswith("Too"):
                 return await hell.edit(
-                    f"**Terminal Finished With Error**\n(`May Got Limit Error from telethon Please try agin Later`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people"
+                    f"**Terminal Finished With Error**\n(`May Got Limit Error from Telethon🤷‍♂️ Please try agin later.`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to invite `{f}` people"
                 )
             await event.client(
                 functions.channels.InviteToChannelRequest(channel=chat, users=[user.id])
             )
             s = s + 1
-            await hell.edit(
-                f"**Terminal Running...**\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`"
+            await cat.edit(
+                f"**Terminal is running...**\n\n• Invited `{s}` people. \n• Failed to invite `{f}` people.\n\n**• LastError:** `{error}`"
             )
         except Exception as e:
             error = str(e)
             f = f + 1
-    return await hell.edit(
-        f"**Terminal Finished** \n\n• Successfully Invited `{s}` people \n• failed to invite `{f}` people"
+    return await cat.edit(
+        f"**Terminal Finished** \n\n• Invited `{s}` people \n• Failed to invite `{f}` people"
     )
 
 
@@ -139,9 +129,9 @@ CMD_HELP.update(
     {
         "invite": """**Plugin : **`invite`
 
-  •  **Syntax : **`!add username(s)/userid(s)`
+  •  **Syntax : **`.add username(s)/userid(s)`
   •  **Function : **__Add the given user/users to the group where u used the command__
-  •  **Syntax : **`!invite channel/groupname`
+  •  **Syntax : **`.invite channel/groupname`
   •  **Function : **__Kidnaps user/users from the specified channel/group to the channel/group where u used the command__
 """
     }
