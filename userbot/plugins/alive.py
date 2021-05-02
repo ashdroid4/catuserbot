@@ -178,11 +178,11 @@ async def myalivepics(cpic):
         
     await cpic.edit( 
                      '''**MY ALIVE PICS**\n\n'''
-                     f"{PIC_1}\n"
-                     f"{PIC_2}\n"
-                     f"{PIC_3}\n"
-                     f"{PIC_4}\n"
-                     f"{PIC_5}"
+                     f"{PIC_1}\n\n"
+                     f"{PIC_2}\n\n"
+                     f"{PIC_3}\n\n"
+                     f"{PIC_4}\n\n"
+                     f"{PIC_5}\n"
     )
 
 # UniBorg Telegram UseRBot
