@@ -118,7 +118,7 @@ async def amireallyalive(alive):
             f"**{EMOJI} Uptime :** `{uptime}\n`"
             f"**{EMOJI} Master:** {mention}\n",
         )
-    else
+    else:
         cat_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         cat_caption += f"**{EMOJI} Database :** `{check_sgnirts}`\n"
         cat_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
