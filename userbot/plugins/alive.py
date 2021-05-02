@@ -224,6 +224,6 @@ CMD_HELP.update(
       \n\n  •  **Syntax : **`.ialive` \
       \n  •  **Function : **__inline status of bot will be shown.__\
       \nn   •  **Syntax : **`.whatapic` \
-      \n  •  **Function : **__alive pic var status will be shown.__\
+      \n  •  **Function : **__alive pic var status will be shown.__"
     }
 )
