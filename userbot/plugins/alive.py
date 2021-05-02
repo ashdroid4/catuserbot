@@ -149,6 +149,42 @@ async def amireallyalive(alive):
     await alive.delete()
 
 
+@bot.on(admin_cmd(outgoing=True, pattern="whatapic$"))
+@bot.on(sudo_cmd(pattern="whatapic$", allow_sudo=True))
+async def myalivepics(cpic):
+    if cpic.fwd_from:
+        return
+    
+    if CAT_IMG_1:
+        PIC_1 = f"**ALIVE_PIC_1 ✅** = [LINK]({CAT_IMG_1})"
+    else:
+        PIC_1 = "**ALIVE_PIC_1 ❌**"
+    if CAT_IMG_2:
+        PIC_2 = f"**ALIVE_PIC_2 ✅** = [LINK]({CAT_IMG_2})"
+    else:
+        PIC_2 = "**ALIVE_PIC_2 ❌**"
+    if CAT_IMG_3:
+        PIC_3 = f"**ALIVE_PIC_3 ✅** = [LINK]({CAT_IMG_3})"
+    else:
+        PIC_3 = "**ALIVE_PIC_3 ❌**"
+    if CAT_IMG_4:
+        PIC_4 = f"**ALIVE_PIC_4 ✅** = [LINK]({CAT_IMG_4})"
+    else:
+        PIC_4 = "**ALIVE_PIC_4 ❌**"
+    if CAT_IMG_5:
+        PIC_5 = "**ALIVE_PIC_5 ✅** = [LINK]({CAT_IMG_5})"
+    else:
+        PIC_5 = "**ALIVE_PIC_5 ❌**"
+        
+    await cpic.edit( 
+                     '''**MY ALIVE PICS**\n\n
+                     f"{PIC_1}\n"
+                     f"{PIC_2}\n"
+                     f"{PIC_3}\n"
+                     f"{PIC_4}\n"
+                     f"{PIC_5}"
+    )
+
 # UniBorg Telegram UseRBot
 # Copyright (C) 2020 @UniBorg
 # This code is licensed under
