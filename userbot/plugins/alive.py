@@ -22,7 +22,7 @@ if CAT_IMG_1 and not CAT_IMG_2 and not CAT_IMG_3 and not CAT_IMG_4 and not CAT_I
     CAT_IMG = CAT_IMG_1
 if CAT_IMG_1 and CAT_IMG_2 and not CAT_IMG_3 and not CAT_IMG_4 and not CAT_IMG_5:
     CAT_IMG = CAT_IMG_1, CAT_IMG_2
-if CAT_IMG_1 and not CAT_IMG_2 and CAT_IMG_3 amd not CAT_IMG_4 and not CAT_IMG_5:
+if CAT_IMG_1 and not CAT_IMG_2 and CAT_IMG_3 and not CAT_IMG_4 and not CAT_IMG_5:
     CAT_IMG = CAT_IMG_1, CAT_IMG_3
 if CAT_IMG_1 and not CAT_IMG_2 and not CAT_IMG_3 and CAT_IMG_4 and not CAT_IMG_5:
     CAT_IMG = CAT_IMG_1, CAT_IMG_4
